@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUNNY SOUP - Art Portfolio & Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=Russo+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cursor trail effect container -->
+    <div id="cursor-trail"></div>
+
+    <!-- Floating decorative elements -->
+    <div class="floating-stars"></div>
+
+    <!-- Main container with Windows 98 style border -->
+    <div class="win98-window main-container">
+        <div class="win98-titlebar">
+            <span class="win98-title">&#9733; BUNNY SOUP - untitled.bmp &#9733;</span>
+            <div class="win98-buttons">
+                <button class="win98-btn">_</button>
+                <button class="win98-btn">&#9633;</button>
+                <button class="win98-btn close-btn">X</button>
+            </div>
+        </div>
+
+        <!-- MS Paint Menu Bar -->
+        <div class="mspaint-menubar">
+            <span class="menu-item">File</span>
+            <span class="menu-item">Edit</span>
+            <span class="menu-item">View</span>
+            <span class="menu-item">Image</span>
+            <span class="menu-item">Colors</span>
+            <span class="menu-item">Help</span>
+        </div>
+
+        <!-- MS Paint Toolbar with Canvas -->
+        <div class="mspaint-toolbar-container">
+            <div class="mspaint-toolbar">
+                <button class="mspaint-tool" title="Free-Form Select">&#9998;</button>
+                <button class="mspaint-tool" title="Select">&#9634;</button>
+                <button class="mspaint-tool" title="Eraser">&#9707;</button>
+                <button class="mspaint-tool" title="Fill">&#9731;</button>
+                <button class="mspaint-tool" title="Pick Color">&#128083;</button>
+                <button class="mspaint-tool" title="Magnifier">&#128269;</button>
+                <button class="mspaint-tool active" title="Pencil">&#9999;</button>
+                <button class="mspaint-tool" title="Brush">&#128396;</button>
+                <button class="mspaint-tool" title="Airbrush">&#128168;</button>
+                <button class="mspaint-tool" title="Text">A</button>
+                <button class="mspaint-tool" title="Line">&#9585;</button>
+                <button class="mspaint-tool" title="Curve">&#8978;</button>
+                <button class="mspaint-tool" title="Rectangle">&#9645;</button>
+                <button class="mspaint-tool" title="Ellipse">&#9711;</button>
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="paint-canvas" class="paint-canvas"></canvas>
+            </div>
+            <div class="canvas-controls">
+                <button id="clear-canvas" class="canvas-btn">Clear</button>
+                <button id="save-canvas" class="canvas-btn">Save</button>
+            </div>
+            <div class="mspaint-palette">
+                <div class="mspaint-color" style="background:#000000"></div>
+                <div class="mspaint-color" style="background:#808080"></div>
+                <div class="mspaint-color" style="background:#800000"></div>
+                <div class="mspaint-color" style="background:#808000"></div>
+                <div class="mspaint-color" style="background:#008000"></div>
+                <div class="mspaint-color" style="background:#008080"></div>
+                <div class="mspaint-color" style="background:#000080"></div>
+                <div class="mspaint-color" style="background:#800080"></div>
+                <div class="mspaint-color" style="background:#ff00ff"></div>
+                <div class="mspaint-color" style="background:#00ffff"></div>
+                <div class="mspaint-color" style="background:#ffff00"></div>
+                <div class="mspaint-color" style="background:#00ff00"></div>
+                <div class="mspaint-color" style="background:#ff6600"></div>
+                <div class="mspaint-color" style="background:#ff69b4"></div>
+                <div class="mspaint-color" style="background:#ffffff"></div>
+                <div class="mspaint-color" style="background:#c0c0c0"></div>
+                <div class="mspaint-color" style="background:#ff0000"></div>
+                <div class="mspaint-color" style="background:#ffff00"></div>
+                <div class="mspaint-color" style="background:#00ff00"></div>
+                <div class="mspaint-color" style="background:#00ffff"></div>
+                <div class="mspaint-color" style="background:#0000ff"></div>
+                <div class="mspaint-color" style="background:#ff00ff"></div>
+                <div class="mspaint-color" style="background:#9900ff"></div>
+                <div class="mspaint-color" style="background:#ff1493"></div>
+                <div class="mspaint-color" style="background:#ffc0cb"></div>
+                <div class="mspaint-color" style="background:#ffb6c1"></div>
+                <div class="mspaint-color" style="background:#ff69b4"></div>
+                <div class="mspaint-color" style="background:#ff00ff"></div>
+            </div>
+        </div>
+
+        <!-- Header / Logo Section -->
+        <header class="header">
+            <div class="logo-container">
+                <!-- REPLACE THIS with your logo image -->
+                <img src="logo.png" alt="BUNNY SOUP" class="logo" onerror="this.style.display='none'; document.querySelector('.logo-text-fallback').style.display='block';">
+                <div class="logo-text-fallback" style="display:none;">
+                    <h1 class="glitch-text" data-text="BUNNY SOUP">BUNNY SOUP</h1>
+                </div>
+            </div>
+            <p class="tagline">&#10048; ART &#10048; EVENTS &#10048; VIBES &#10048;</p>
+
+            <!-- Marquee text - very Y2K -->
+            <div class="marquee-container">
+                <div class="marquee">
+                    <span>&#9733; PLUR &#9733; PEACE &#9733; LOVE &#9733; UNITY &#9733; RESPECT &#9733; PLUR &#9733; PEACE &#9733; LOVE &#9733; UNITY &#9733; RESPECT &#9733; PLUR &#9733; PEACE &#9733; LOVE &#9733; UNITY &#9733; RESPECT &#9733; PLUR &#9733; PEACE &#9733; LOVE &#9733; UNITY &#9733; RESPECT &#9733;</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active" data-section="home">&#9733; HOME</a></li>
+                <li><a href="#portfolio" class="nav-link" data-section="portfolio">&#9733; PORTFOLIO</a></li>
+                <li><a href="#events" class="nav-link" data-section="events">&#9733; EVENTS</a></li>
+                <li><a href="#blog" class="nav-link" data-section="blog">&#9733; BLOG</a></li>
+                <li><a href="#shop" class="nav-link" data-section="shop">&#9733; SHOP</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">&#9733; CONTACT</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- HOME SECTION -->
+            <section id="home" class="content-section active">
+                <div class="section-window">
+                    <div class="win98-titlebar mini">
+                        <span>welcome.exe</span>
+                    </div>
+                    <div class="section-content home-content">
+                        <div class="intro-box">
+                            <h2 class="neon-text welcome-title">&#9733; WELCOME TO THE BUNNY HOLE &#9733;</h2>
+                            <div class="pixel-divider"></div>
+                            <p class="intro-text">
+                                Step into a world of cuteness, chaos, and colors
+                            </p>
+                            <div class="blink-text">&#9829; CLICK AROUND TO EXPLORE &#9829;</div>
+                        </div>
+
+                        <div class="featured-grid">
+                            <div class="featured-box">
+                                <div class="box-icon pixel-icon pixel-art"><img src="art-icon.png" alt="Art"></div>
+                                <h3>LATEST ART</h3>
+                            </div>
+                            <div class="featured-box">
+                                <div class="box-icon pixel-icon pixel-music"><img src="music-icon.png" alt="Music"></div>
+                                <h3>UPCOMING EVENTS</h3>
+                            </div>
+                            <div class="featured-box">
+                                <div class="box-icon pixel-icon pixel-shop">&#9733;</div>
+                                <h3>NEW IN SHOP</h3>
+                            </div>
+                        </div>
+
+                        <!-- Web ring / site buttons - very 2000s -->
+                        <div class="playlist-link">
+                            <a href="https://music.apple.com/us/playlist/furry-trash/pl.u-6mo4lNmfBvda7Vd" target="_blank" class="apple-music-btn">
+                                &#127925; FURRY TRASH PLAYLIST &#127925;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PORTFOLIO SECTION -->
+            <section id="portfolio" class="content-section">
+                <div class="section-window">
+                    <div class="win98-titlebar mini">
+                        <span>my_art.exe</span>
+                    </div>
+                    <div class="section-content">
+                        <h2 class="section-title neon-text">&#127912; ART PORTFOLIO &#127912;</h2>
+                        <p class="section-subtitle">Click to view full size</p>
+
+                        <div class="gallery-grid">
+                            <div class="gallery-item" data-category="digital">
+                                <div class="gallery-placeholder">
+                                    <img src="artwork1.png" alt="Artwork">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EVENTS SECTION -->
+            <section id="events" class="content-section">
+                <div class="section-window">
+                    <div class="win98-titlebar mini">
+                        <span>events.exe</span>
+                    </div>
+                    <div class="section-content">
+                        <h2 class="section-title neon-text">&#127881; UPCOMING EVENTS &#127881;</h2>
+
+                        <div class="events-list">
+                            <div class="event-card">
+                                <div class="event-date">
+                                    <span class="month">JAN</span>
+                                    <span class="day">31</span>
+                                </div>
+                                <div class="event-info">
+                                    <h3 class="event-title">&#9733; DIGITAL MADNESS.WAV &#9733;</h3>
+                                    <p class="event-location">&#128205; Firehouse CAC</p>
+                                    <p class="event-time">&#128336; Doors 7:30PM Music 8:00PM</p>
+                                    <p class="event-desc">👾DIGITALMADNESS.wav👾🌐 - OLD INTERNET/ BREAKCORE AND HARDCORE THEMED RAVE HEADLINED BY @gupimusic ☢️ SOBER SPACE 🚭</p>
+                                    <a href="https://www.instagram.com/p/DTYBxA0jupY/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="event-btn">GET TICKETS</a>
+                                </div>
+                            </div>
+
+                            <div class="event-card">
+                                <div class="event-date">
+                                    <span class="month">MAR</span>
+                                    <span class="day">06</span>
+                                </div>
+                                <div class="event-info">
+                                    <h3 class="event-title">&#127752; Myrrda's Hypnoticon &#127752;</h3>
+                                    <p class="event-location">&#128205; The Back Table GSO</p>
+                                    <p class="event-time">&#128336; DOORS 7PM MUSIC 8PM</p>
+                                    <p class="event-desc">ALL ARE WELCOME, LET'S KEEP THIS FIRE ROARING!!!</p>
+                                    <a href="https://backtablegso.com/calendar-2/" target="_blank" class="event-btn">GET TICKETS</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="events-cta">
+                            <p>&#10048; Want to collab or book for an event? &#10048;</p>
+                            <a href="#contact" class="cta-btn" onclick="document.querySelector('[data-section=contact]').click(); return false;">CONTACT ME</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BLOG SECTION -->
+            <section id="blog" class="content-section">
+                <div class="section-window">
+                    <div class="win98-titlebar mini">
+                        <span>blog.exe</span>
+                    </div>
+                    <div class="section-content">
+                        <h2 class="section-title neon-text">&#128221; BUNNY BLOG &#128221;</h2>
+
+                        <div class="blog-grid">
+                            <article class="blog-post">
+                                <div class="blog-image-placeholder">
+                                    <span>&#128248;</span>
+                                </div>
+                                <div class="blog-content">
+                                    <span class="blog-date">Jan 15, 2026</span>
+                                    <h3 class="blog-title">KANDI TUTORIAL: flower cuff (beginner/int)</h3>
+                                    <a href="#" class="read-more" id="kandi-tutorial-link" onclick="document.getElementById('terminal-modal').classList.add('active'); return false;">READ MORE &#10148;</a>
+                                </div>
+                            </article>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- SHOP SECTION -->
+            <section id="shop" class="content-section">
+                <div class="section-window">
+                    <div class="win98-titlebar mini">
+                        <span>shop.exe</span>
+                    </div>
+                    <div class="section-content">
+                        <h2 class="section-title neon-text">&#128717; BUNNY SHOP &#128717;</h2>
+                        <p class="section-subtitle">&#10048; Original art, prints, and merch &#10048;</p>
+
+                        <!-- Shopify Buy Button Integration Area -->
+                        <div id="shopify-embed" class="shopify-container">
+                            <div class="shop-preview-grid">
+                                <div class="shop-item">
+                                    <div class="shop-image-placeholder">
+                                        <img src="shop-icon.jpg" alt="Coming Soon">
+                                    </div>
+                                    <h4>coming soon!</h4>
+                                    <p class="price">$420</p>
+                                    <button class="buy-btn">ADD TO CART</button>
+                                </div>
+                                <div class="shop-item">
+                                    <div class="shop-image-placeholder">
+                                        <img src="shop-icon.jpg" alt="Coming Soon">
+                                    </div>
+                                    <h4>coming soon!</h4>
+                                    <p class="price">$420</p>
+                                    <button class="buy-btn">ADD TO CART</button>
+                                </div>
+                                <div class="shop-item">
+                                    <div class="shop-image-placeholder">
+                                        <img src="shop-icon.jpg" alt="Coming Soon">
+                                    </div>
+                                    <h4>coming soon!</h4>
+                                    <p class="price">$420</p>
+                                    <button class="buy-btn">ADD TO CART</button>
+                                </div>
+                                <div class="shop-item">
+                                    <div class="shop-image-placeholder">
+                                        <img src="shop-icon.jpg" alt="Coming Soon">
+                                    </div>
+                                    <h4>coming soon!</h4>
+                                    <p class="price">$420</p>
+                                    <button class="buy-btn">ADD TO CART</button>
+                                </div>
+                            </div>
+
+                            <div class="shopify-cta">
+                                <p>&#9733; Full shop powered by Shopify &#9733;</p>
+                                <a href="https://your-shopify-store.myshopify.com" class="shop-link-btn" target="_blank">VISIT SHOPIFY &#10148;</a>
+                            </div>
+                        </div>
+
+                        <!-- Shopify Buy Button Script Placeholder -->
+                        <script type="text/placeholder" id="shopify-script">
+                            <!--
+                            To integrate Shopify:
+                            1. Go to your Shopify admin
+                            2. Sales Channels > Buy Button
+                            3. Create a Buy Button for your products
+                            4. Copy the embed code and paste it here
+                            5. Replace the preview grid above with the Shopify embed
+                            -->
+                        </script>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT SECTION -->
+            <section id="contact" class="content-section">
+                <div class="section-window">
+                    <div class="win98-titlebar mini">
+                        <span>contact.exe</span>
+                    </div>
+                    <div class="section-content">
+                        <h2 class="section-title neon-text">&#128231; GET IN TOUCH &#128231;</h2>
+
+                        <div class="contact-container">
+                            <div class="contact-info">
+                                <h3>&#9733; LET'S CONNECT &#9733;</h3>
+                                <p>For collabs, commissions, event bookings, or just to say hi!</p>
+
+                                <div class="social-links">
+                                    <a href="https://www.instagram.com/bunny.soup/" target="_blank" class="social-btn">&#128247; INSTAGRAM</a>
+                                    <a href="https://www.tiktok.com/@bunny.soup_" target="_blank" class="social-btn">&#127912; TIKTOK</a>
+                                </div>
+
+                                <div class="email-display">
+                                    <span class="blink-text">&#9993;</span> bnnuysoup@gmail.com
+                                </div>
+                            </div>
+
+                            <form class="contact-form" id="contact-form">
+                                <div class="form-group">
+                                    <label for="name">YOUR NAME:</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">YOUR EMAIL:</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">SUBJECT:</label>
+                                    <select id="subject" name="subject">
+                                        <option value="general">General Inquiry</option>
+                                        <option value="commission">Commission Request</option>
+                                        <option value="collab">Collaboration</option>
+                                        <option value="event">Event Booking</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">MESSAGE:</label>
+                                    <textarea id="message" name="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="submit-btn">&#10148; SEND MESSAGE</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- MS Paint Status Bar -->
+        <div class="mspaint-statusbar">
+            <span class="status-coords">Pos: 420, 69</span>
+            <span class="status-size">Size: 800 x 600</span>
+            <span class="status-hint">For Help, click Help Topics on the Help Menu.</span>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="visitor-counter">
+                    <span>&#128064; VISITORS:</span>
+                    <span class="counter-display">000420</span>
+                </div>
+                <p>&copy; 2026 BUNNY SOUP. All rights reserved.</p>
+                <p class="footer-tagline">&#9733; Made with love and neon dreams &#9733;</p>
+                <div class="footer-badges">
+                    <span class="badge">HTML</span>
+                    <span class="badge">CSS</span>
+                    <span class="badge">&#9829;</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Loading screen overlay -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-text">LOADING BUNNY SOUP...</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-percent">0%</div>
+        </div>
+    </div>
+
+    <!-- Lightbox for gallery -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close">&times;</button>
+        <div class="lightbox-content">
+            <img src="" alt="Artwork">
+        </div>
+    </div>
+
+    <!-- Terminal Modal for Blog Post -->
+    <div id="terminal-modal" class="terminal-modal">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="terminal-title">kandi_tutorial.exe</span>
+                <button class="terminal-close">&times;</button>
+            </div>
+            <div class="terminal-body">
+                <p class="terminal-prompt">> LOADING TUTORIAL...</p>
+                <p class="terminal-prompt">> READY.</p>
+                <br>
+                <h2 class="terminal-heading">How to make a flower cuff!</h2>
+                <br>
+                <p class="terminal-text">This is a great project if it's your first time weaving beads or making any kind of cuff.</p>
+                <br>
+                <p class="terminal-prompt">> MATERIALS:</p>
+                <ul class="terminal-list">
+                    <li>about 2 handfuls of beads</li>
+                    <li>5 feet of elastic string</li>
+                    <li>a plastic needle</li>
+                    <li>scissors</li>
+                </ul>
+                <br>
+                <p class="terminal-cursor">_</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
