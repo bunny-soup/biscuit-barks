@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=Russo+One&display=swap" rel="stylesheet">
+    <!-- Shopify Buy Button SDK -->
+    <script src="https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js"></script>
 </head>
 <body>
     <!-- Cursor trail effect container -->
@@ -246,7 +248,23 @@
                     <div class="section-content">
                         <h2 class="section-title neon-text">&#128221; BUNNY BLOG &#128221;</h2>
 
+                        <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 30px; flex-wrap: wrap;">
+                            <button class="cta-btn" onclick="document.getElementById('documentary-modal').classList.add('active');">&#127909; EDM Documentary</button>
+                            <button class="cta-btn" onclick="document.getElementById('terminal-modal').classList.add('active');">&#128248; Flower Cuff Tutorial</button>
+                        </div>
+
                         <div class="blog-grid">
+                            <article class="blog-post" style="width: 100%; max-width: 600px;">
+                                <div class="blog-image-placeholder">
+                                    <span>&#127909;</span>
+                                </div>
+                                <div class="blog-content">
+                                    <span class="blog-date">Jan 30, 2026</span>
+                                    <h3 class="blog-title">Super cool documentary I watched last night</h3>
+                                    <p style="margin: 15px 0; color: #00ff00; font-family: 'VT323', monospace; font-size: 18px;">I was surfing wikipedia articles on different EDM foreign subgenres and cultures surrounding EDM in different countries and I happened upon the coolest documentary ever. I've linked it below!</p>
+                                    <a href="https://austincharleswilliams.com/dek-bass-1" target="_blank" style="color: #00ffff; font-family: 'VT323', monospace;">https://austincharleswilliams.com/dek-bass-1</a>
+                                </div>
+                            </article>
                             <article class="blog-post">
                                 <div class="blog-image-placeholder">
                                     <span>&#128248;</span>
@@ -275,57 +293,97 @@
 
                         <!-- Shopify Buy Button Integration Area -->
                         <div id="shopify-embed" class="shopify-container">
-                            <div class="shop-preview-grid">
-                                <div class="shop-item">
-                                    <div class="shop-image-placeholder">
-                                        <img src="shop-icon.jpg" alt="Coming Soon">
-                                    </div>
-                                    <h4>coming soon!</h4>
-                                    <p class="price">$420</p>
-                                    <button class="buy-btn">ADD TO CART</button>
-                                </div>
-                                <div class="shop-item">
-                                    <div class="shop-image-placeholder">
-                                        <img src="shop-icon.jpg" alt="Coming Soon">
-                                    </div>
-                                    <h4>coming soon!</h4>
-                                    <p class="price">$420</p>
-                                    <button class="buy-btn">ADD TO CART</button>
-                                </div>
-                                <div class="shop-item">
-                                    <div class="shop-image-placeholder">
-                                        <img src="shop-icon.jpg" alt="Coming Soon">
-                                    </div>
-                                    <h4>coming soon!</h4>
-                                    <p class="price">$420</p>
-                                    <button class="buy-btn">ADD TO CART</button>
-                                </div>
-                                <div class="shop-item">
-                                    <div class="shop-image-placeholder">
-                                        <img src="shop-icon.jpg" alt="Coming Soon">
-                                    </div>
-                                    <h4>coming soon!</h4>
-                                    <p class="price">$420</p>
-                                    <button class="buy-btn">ADD TO CART</button>
-                                </div>
-                            </div>
+                            <!-- Shopify collection will load here -->
+                            <div id="collection-component"></div>
 
                             <div class="shopify-cta">
                                 <p>&#9733; Full shop powered by Shopify &#9733;</p>
-                                <a href="https://your-shopify-store.myshopify.com" class="shop-link-btn" target="_blank">VISIT SHOPIFY &#10148;</a>
+                                <a href="https://bunny-soup.myshopify.com" class="shop-link-btn" target="_blank">VISIT FULL SHOP &#10148;</a>
                             </div>
                         </div>
 
-                        <!-- Shopify Buy Button Script Placeholder -->
-                        <script type="text/placeholder" id="shopify-script">
-                            <!--
-                            To integrate Shopify:
-                            1. Go to your Shopify admin
-                            2. Sales Channels > Buy Button
-                            3. Create a Buy Button for your products
-                            4. Copy the embed code and paste it here
-                            5. Replace the preview grid above with the Shopify embed
-                            -->
+                        <!-- Shopify Buy Button Initialization -->
+                        <script type="text/javascript">
+                        /*
+                         * SHOPIFY SETUP INSTRUCTIONS:
+                         * 1. Go to your Shopify admin: https://bunny-soup.myshopify.com/admin
+                         * 2. Go to Settings > Apps and sales channels > Develop apps
+                         * 3. Create a new app (or use existing)
+                         * 4. Configure Storefront API access and get your Storefront Access Token
+                         * 5. Replace 'YOUR_STOREFRONT_ACCESS_TOKEN' below with your actual token
+                         */
+                        var shopifyClient;
+                        var shopifyUI;
+
+                        function initShopify() {
+                            if (window.ShopifyBuy && window.ShopifyBuy.buildClient) {
+                                shopifyClient = ShopifyBuy.buildClient({
+                                    domain: 'bunny-soup.myshopify.com',
+                                    storefrontAccessToken: 'YOUR_STOREFRONT_ACCESS_TOKEN' // Replace with your token
+                                });
+
+                                ShopifyBuy.UI.onReady(shopifyClient).then(function(ui) {
+                                    shopifyUI = ui;
+                                    ui.createComponent('collection', {
+                                        id: 'all', // Shows all products, or use specific collection ID
+                                        node: document.getElementById('collection-component'),
+                                        moneyFormat: '%24%7B%7Bamount%7D%7D',
+                                        options: {
+                                            product: {
+                                                styles: {
+                                                    product: {
+                                                        '@media (min-width: 601px)': {
+                                                            'max-width': 'calc(25% - 20px)',
+                                                            'margin-left': '20px',
+                                                            'margin-bottom': '50px'
+                                                        }
+                                                    },
+                                                    title: {
+                                                        'font-family': '"VT323", monospace',
+                                                        'font-size': '18px',
+                                                        'color': '#ff00ff'
+                                                    },
+                                                    price: {
+                                                        'font-family': '"VT323", monospace',
+                                                        'font-size': '16px',
+                                                        'color': '#00ffff'
+                                                    },
+                                                    button: {
+                                                        'font-family': '"Press Start 2P", cursive',
+                                                        'font-size': '10px',
+                                                        'background-color': '#ff00ff',
+                                                        ':hover': {
+                                                            'background-color': '#00ffff'
+                                                        }
+                                                    }
+                                                },
+                                                text: {
+                                                    button: 'ADD TO CART'
+                                                }
+                                            },
+                                            cart: {
+                                                styles: {
+                                                    button: {
+                                                        'font-family': '"Press Start 2P", cursive',
+                                                        'background-color': '#ff00ff',
+                                                        ':hover': {
+                                                            'background-color': '#00ffff'
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    });
+                                });
+                            }
+                        }
+
+                        // Initialize when SDK is loaded
+                        if (document.readyState === 'complete') {
+                            initShopify();
+                        } else {
+                            window.addEventListener('load', initShopify);
+                        }
                         </script>
                     </div>
                 </div>
@@ -425,7 +483,29 @@
         </div>
     </div>
 
-    <!-- Terminal Modal for Blog Post -->
+    <!-- Terminal Modal for Documentary Blog Post -->
+    <div id="documentary-modal" class="terminal-modal">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="terminal-title">documentary.exe</span>
+                <button class="terminal-close">&times;</button>
+            </div>
+            <div class="terminal-body">
+                <p class="terminal-prompt">> LOADING POST...</p>
+                <p class="terminal-prompt">> READY.</p>
+                <br>
+                <h2 class="terminal-heading">Super cool documentary I watched last night</h2>
+                <br>
+                <p class="terminal-text">I was surfing wikipedia articles on different EDM foreign subgenres and cultures surrounding EDM in different countries and I happened upon the coolest documentary ever. I've linked it below!</p>
+                <br>
+                <a href="https://austincharleswilliams.com/dek-bass-1" target="_blank" class="terminal-link">https://austincharleswilliams.com/dek-bass-1</a>
+                <br>
+                <p class="terminal-cursor">_</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terminal Modal for Kandi Tutorial -->
     <div id="terminal-modal" class="terminal-modal">
         <div class="terminal-window">
             <div class="terminal-header">

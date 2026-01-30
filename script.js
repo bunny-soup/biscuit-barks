@@ -1248,8 +1248,9 @@ function initPaintCanvas() {
 
 function initTerminalModal() {
     const terminalModal = document.getElementById('terminal-modal');
+    const documentaryModal = document.getElementById('documentary-modal');
     const tutorialLink = document.getElementById('kandi-tutorial-link');
-    const terminalClose = document.querySelector('.terminal-close');
+    const documentaryLink = document.getElementById('documentary-link');
 
     console.log('Terminal modal init:', terminalModal, tutorialLink);
 
@@ -1265,28 +1266,44 @@ function initTerminalModal() {
         });
     }
 
-    if (terminalClose) {
-        terminalClose.addEventListener('click', function(e) {
+    if (documentaryLink) {
+        documentaryLink.addEventListener('click', function(e) {
+            e.preventDefault();
             e.stopPropagation();
-            if (terminalModal) {
-                terminalModal.classList.remove('active');
+            console.log('Documentary link clicked');
+            if (documentaryModal) {
+                documentaryModal.classList.add('active');
+                console.log('Documentary modal activated');
             }
         });
     }
 
-    // Close on clicking outside the window
-    if (terminalModal) {
-        terminalModal.addEventListener('click', function(e) {
-            if (e.target === terminalModal) {
-                terminalModal.classList.remove('active');
+    // Close buttons for all terminal modals
+    document.querySelectorAll('.terminal-close').forEach(function(closeBtn) {
+        closeBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const modal = closeBtn.closest('.terminal-modal');
+            if (modal) {
+                modal.classList.remove('active');
             }
         });
-    }
+    });
+
+    // Close on clicking outside the window
+    document.querySelectorAll('.terminal-modal').forEach(function(modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    });
 
     // Close on Escape key
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && terminalModal && terminalModal.classList.contains('active')) {
-            terminalModal.classList.remove('active');
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.terminal-modal.active').forEach(function(modal) {
+                modal.classList.remove('active');
+            });
         }
     });
 }
