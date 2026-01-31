@@ -407,7 +407,7 @@
                                 </div>
                             </div>
 
-                            <form class="contact-form" id="contact-form">
+                            <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
                                 <div class="form-group">
                                     <label for="name">YOUR NAME:</label>
                                     <input type="text" id="name" name="name" required>
@@ -430,6 +430,8 @@
                                     <label for="message">MESSAGE:</label>
                                     <textarea id="message" name="message" rows="5" required></textarea>
                                 </div>
+                                <input type="hidden" name="_subject" value="New message from bunnysoup.com">
+                                <input type="hidden" name="_next" value="https://bunnysoup.com/#contact">
                                 <button type="submit" class="submit-btn">&#10148; SEND MESSAGE</button>
                             </form>
                         </div>
