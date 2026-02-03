@@ -1913,6 +1913,135 @@ textarea,
     top: 90%;
 }
 
+/* Floating bunny images */
+.floating-bunny-images {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bunny-float {
+    position: absolute;
+    opacity: 0.7;
+    filter: drop-shadow(0 0 10px #ff69b4) drop-shadow(0 0 20px #ff00ff);
+}
+
+.bunny-1 {
+    width: 50px;
+    top: 5%;
+    animation: bunny-drift-1 25s linear infinite;
+}
+
+.bunny-2 {
+    width: 35px;
+    top: 15%;
+    animation: bunny-drift-2 30s linear infinite;
+    animation-delay: -5s;
+}
+
+.bunny-3 {
+    width: 45px;
+    top: 25%;
+    animation: bunny-drift-1 22s linear infinite;
+    animation-delay: -10s;
+}
+
+.bunny-4 {
+    width: 40px;
+    top: 35%;
+    animation: bunny-drift-2 28s linear infinite;
+    animation-delay: -3s;
+}
+
+.bunny-5 {
+    width: 55px;
+    top: 45%;
+    animation: bunny-drift-1 20s linear infinite;
+    animation-delay: -15s;
+}
+
+.bunny-6 {
+    width: 30px;
+    top: 55%;
+    animation: bunny-drift-2 32s linear infinite;
+    animation-delay: -8s;
+}
+
+.bunny-7 {
+    width: 48px;
+    top: 65%;
+    animation: bunny-drift-1 24s linear infinite;
+    animation-delay: -12s;
+}
+
+.bunny-8 {
+    width: 38px;
+    top: 75%;
+    animation: bunny-drift-2 26s linear infinite;
+    animation-delay: -18s;
+}
+
+.bunny-9 {
+    width: 42px;
+    top: 85%;
+    animation: bunny-drift-1 21s linear infinite;
+    animation-delay: -7s;
+}
+
+.bunny-10 {
+    width: 52px;
+    top: 10%;
+    animation: bunny-drift-2 27s linear infinite;
+    animation-delay: -20s;
+}
+
+.bunny-11 {
+    width: 33px;
+    top: 50%;
+    animation: bunny-drift-1 29s linear infinite;
+    animation-delay: -14s;
+}
+
+.bunny-12 {
+    width: 47px;
+    top: 80%;
+    animation: bunny-drift-2 23s linear infinite;
+    animation-delay: -2s;
+}
+
+@keyframes bunny-drift-1 {
+    0% {
+        left: -60px;
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(15deg);
+    }
+    100% {
+        left: 100vw;
+        transform: rotate(-15deg);
+    }
+}
+
+@keyframes bunny-drift-2 {
+    0% {
+        left: 100vw;
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        left: -60px;
+        transform: rotate(15deg);
+    }
+}
+
 /* Cursor trail effect placeholder */
 #cursor-trail {
     position: fixed;
