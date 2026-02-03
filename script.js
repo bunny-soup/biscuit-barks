@@ -529,36 +529,7 @@ const sounds = {
 let soundEnabled = false;
 
 function initSoundEffects() {
-    // Create mute/unmute button
-    const soundToggle = document.createElement('button');
-    soundToggle.innerHTML = '🔇';
-    soundToggle.title = 'Toggle Sound Effects';
-    soundToggle.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        background: var(--win98-gray, #c0c0c0);
-        border: 3px outset white;
-        font-size: 24px;
-        cursor: pointer;
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    `;
-
-    soundToggle.addEventListener('click', function() {
-        soundEnabled = !soundEnabled;
-        this.innerHTML = soundEnabled ? '🔊' : '🔇';
-        if (soundEnabled) {
-            playSound('click');
-        }
-    });
-
-    document.body.appendChild(soundToggle);
-
+    // Sound button removed
     // Note: Add actual sound files for full effect
     // sounds.click = new Audio('sounds/click.mp3');
     // etc.
