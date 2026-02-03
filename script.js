@@ -338,20 +338,11 @@ function createBurst(x, y) {
 function initVisitorCounter() {
     const counterDisplay = document.querySelector('.counter-display');
 
-    // Get or initialize visitor count from localStorage
-    let count = localStorage.getItem('bunny-soup-visitors') || 420;
-    count = parseInt(count);
-
-    // Increment count on new session
-    if (!sessionStorage.getItem('bunny-soup-counted')) {
-        count++;
-        localStorage.setItem('bunny-soup-visitors', count);
-        sessionStorage.setItem('bunny-soup-counted', 'true');
-    }
+    // Always show 420
+    const targetCount = 420;
 
     // Animate counter
     let displayCount = 0;
-    const targetCount = count;
     const duration = 2000;
     const startTime = Date.now();
 
