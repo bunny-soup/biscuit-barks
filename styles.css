@@ -1525,6 +1525,14 @@ textarea,
     text-align: center;
 }
 
+.title-bunny {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0 5px;
+}
+
 .back-to-shop-btn {
     display: inline-block;
     padding: 12px 25px;
