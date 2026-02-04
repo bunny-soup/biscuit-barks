@@ -1409,6 +1409,7 @@ textarea,
 
 .shop-hamburger-menu {
     position: relative;
+    z-index: 100;
 }
 
 .hamburger-btn {
@@ -1420,6 +1421,8 @@ textarea,
     flex-direction: column;
     gap: 5px;
     transition: all 0.3s;
+    position: relative;
+    z-index: 101;
 }
 
 .hamburger-line {
@@ -1472,7 +1475,7 @@ textarea,
     min-width: 180px;
     display: none;
     flex-direction: column;
-    z-index: 1000;
+    z-index: 9999;
     box-shadow:
         0 0 20px var(--neon-pink),
         0 0 40px rgba(255, 0, 255, 0.3);
