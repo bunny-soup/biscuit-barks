@@ -2368,6 +2368,7 @@ textarea,
         transform: translateX(0);
     }
     25% {
+        top: 75%;
         transform: translateX(50px);
     }
     50% {
@@ -2375,6 +2376,7 @@ textarea,
         transform: translateX(0);
     }
     75% {
+        top: 25%;
         transform: translateX(-50px);
     }
     100% {
@@ -2389,6 +2391,7 @@ textarea,
         transform: translateX(0);
     }
     25% {
+        top: 0%;
         transform: translateX(-50px);
     }
     50% {
@@ -2396,6 +2399,7 @@ textarea,
         transform: translateX(0);
     }
     75% {
+        top: 75%;
         transform: translateX(50px);
     }
     100% {
@@ -2510,14 +2514,33 @@ textarea,
         left: -60px;
         transform: rotate(0deg) translateY(0);
     }
+    12.5% {
+        left: calc(12.5vw - 30px);
+        transform: rotate(5deg) translateY(-50px);
+    }
     25% {
-        transform: rotate(10deg) translateY(-80px);
+        left: calc(25vw);
+        transform: rotate(10deg) translateY(0);
+    }
+    37.5% {
+        left: calc(37.5vw + 30px);
+        transform: rotate(5deg) translateY(50px);
     }
     50% {
+        left: calc(50vw);
         transform: rotate(0deg) translateY(0);
     }
+    62.5% {
+        left: calc(62.5vw - 30px);
+        transform: rotate(-5deg) translateY(-50px);
+    }
     75% {
-        transform: rotate(-10deg) translateY(80px);
+        left: calc(75vw);
+        transform: rotate(-10deg) translateY(0);
+    }
+    87.5% {
+        left: calc(87.5vw + 30px);
+        transform: rotate(-5deg) translateY(50px);
     }
     100% {
         left: 100vw;
@@ -2530,14 +2553,33 @@ textarea,
         left: 100vw;
         transform: rotate(0deg) translateY(0);
     }
+    12.5% {
+        left: calc(87.5vw - 30px);
+        transform: rotate(-5deg) translateY(50px);
+    }
     25% {
-        transform: rotate(-10deg) translateY(80px);
+        left: calc(75vw);
+        transform: rotate(-10deg) translateY(0);
+    }
+    37.5% {
+        left: calc(62.5vw + 30px);
+        transform: rotate(-5deg) translateY(-50px);
     }
     50% {
+        left: calc(50vw);
         transform: rotate(0deg) translateY(0);
     }
+    62.5% {
+        left: calc(37.5vw - 30px);
+        transform: rotate(5deg) translateY(50px);
+    }
     75% {
-        transform: rotate(10deg) translateY(-80px);
+        left: calc(25vw);
+        transform: rotate(10deg) translateY(0);
+    }
+    87.5% {
+        left: calc(12.5vw + 30px);
+        transform: rotate(5deg) translateY(-50px);
     }
     100% {
         left: -60px;
