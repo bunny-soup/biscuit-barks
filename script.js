@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initHeaderGlitter();
     initMSPaintUI();
     initTerminalModal();
+    initShopHamburgerMenu();
 });
 
 /* ==========================================
@@ -1267,6 +1268,46 @@ function initTerminalModal() {
                 modal.classList.remove('active');
             });
         }
+    });
+}
+
+/* ==========================================
+   SHOP HAMBURGER MENU
+   ========================================== */
+
+function initShopHamburgerMenu() {
+    const menuBtn = document.getElementById('shopMenuBtn');
+    const dropdown = document.getElementById('shopDropdown');
+
+    if (!menuBtn || !dropdown) return;
+
+    // Toggle menu on button click
+    menuBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('active');
+        playSound('click');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!dropdown.contains(e.target) && !menuBtn.contains(e.target)) {
+            dropdown.classList.remove('active');
+        }
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            dropdown.classList.remove('active');
+        }
+    });
+
+    // Play sound on dropdown link hover
+    const dropdownBtns = dropdown.querySelectorAll('.shop-dropdown-btn');
+    dropdownBtns.forEach(btn => {
+        btn.addEventListener('mouseenter', function() {
+            playSound('hover');
+        });
     });
 }
 
