@@ -1975,14 +1975,26 @@ textarea,
     0% {
         transform: translateX(-100%) translateY(0);
     }
+    12.5% {
+        transform: translateX(calc(12.5vw - 50%)) translateY(-60px);
+    }
     25% {
-        transform: translateX(25vw) translateY(-80px);
+        transform: translateX(calc(25vw - 50%)) translateY(0);
+    }
+    37.5% {
+        transform: translateX(calc(37.5vw - 50%)) translateY(60px);
     }
     50% {
-        transform: translateX(50vw) translateY(0);
+        transform: translateX(calc(50vw - 50%)) translateY(0);
+    }
+    62.5% {
+        transform: translateX(calc(62.5vw - 50%)) translateY(-60px);
     }
     75% {
-        transform: translateX(75vw) translateY(80px);
+        transform: translateX(calc(75vw - 50%)) translateY(0);
+    }
+    87.5% {
+        transform: translateX(calc(87.5vw - 50%)) translateY(60px);
     }
     100% {
         transform: translateX(100vw) translateY(0);
@@ -1993,14 +2005,26 @@ textarea,
     0% {
         transform: translateX(100vw) translateY(0);
     }
+    12.5% {
+        transform: translateX(calc(87.5vw - 50%)) translateY(60px);
+    }
     25% {
-        transform: translateX(75vw) translateY(80px);
+        transform: translateX(calc(75vw - 50%)) translateY(0);
+    }
+    37.5% {
+        transform: translateX(calc(62.5vw - 50%)) translateY(-60px);
     }
     50% {
-        transform: translateX(50vw) translateY(0);
+        transform: translateX(calc(50vw - 50%)) translateY(0);
+    }
+    62.5% {
+        transform: translateX(calc(37.5vw - 50%)) translateY(60px);
     }
     75% {
-        transform: translateX(25vw) translateY(-80px);
+        transform: translateX(calc(25vw - 50%)) translateY(0);
+    }
+    87.5% {
+        transform: translateX(calc(12.5vw - 50%)) translateY(-60px);
     }
     100% {
         transform: translateX(-100%) translateY(0);
@@ -2081,14 +2105,26 @@ textarea,
     0% {
         transform: translateX(-100%) translateY(0);
     }
+    12.5% {
+        transform: translateX(calc(12.5vw - 50%)) translateY(-50px);
+    }
     25% {
-        transform: translateX(25vw) translateY(-60px);
+        transform: translateX(calc(25vw - 50%)) translateY(0);
+    }
+    37.5% {
+        transform: translateX(calc(37.5vw - 50%)) translateY(50px);
     }
     50% {
-        transform: translateX(50vw) translateY(0);
+        transform: translateX(calc(50vw - 50%)) translateY(0);
+    }
+    62.5% {
+        transform: translateX(calc(62.5vw - 50%)) translateY(-50px);
     }
     75% {
-        transform: translateX(75vw) translateY(60px);
+        transform: translateX(calc(75vw - 50%)) translateY(0);
+    }
+    87.5% {
+        transform: translateX(calc(87.5vw - 50%)) translateY(50px);
     }
     100% {
         transform: translateX(100vw) translateY(0);
@@ -2099,14 +2135,26 @@ textarea,
     0% {
         transform: translateX(100vw) translateY(0);
     }
+    12.5% {
+        transform: translateX(calc(87.5vw - 50%)) translateY(50px);
+    }
     25% {
-        transform: translateX(75vw) translateY(60px);
+        transform: translateX(calc(75vw - 50%)) translateY(0);
+    }
+    37.5% {
+        transform: translateX(calc(62.5vw - 50%)) translateY(-50px);
     }
     50% {
-        transform: translateX(50vw) translateY(0);
+        transform: translateX(calc(50vw - 50%)) translateY(0);
+    }
+    62.5% {
+        transform: translateX(calc(37.5vw - 50%)) translateY(50px);
     }
     75% {
-        transform: translateX(25vw) translateY(-60px);
+        transform: translateX(calc(25vw - 50%)) translateY(0);
+    }
+    87.5% {
+        transform: translateX(calc(12.5vw - 50%)) translateY(-50px);
     }
     100% {
         transform: translateX(-100%) translateY(0);
@@ -2367,17 +2415,33 @@ textarea,
         top: 100%;
         transform: translateX(0);
     }
+    12.5% {
+        top: 87.5%;
+        transform: translateX(40px);
+    }
     25% {
         top: 75%;
-        transform: translateX(50px);
+        transform: translateX(0);
+    }
+    37.5% {
+        top: 62.5%;
+        transform: translateX(-40px);
     }
     50% {
         top: 50%;
         transform: translateX(0);
     }
+    62.5% {
+        top: 37.5%;
+        transform: translateX(40px);
+    }
     75% {
         top: 25%;
-        transform: translateX(-50px);
+        transform: translateX(0);
+    }
+    87.5% {
+        top: 12.5%;
+        transform: translateX(-40px);
     }
     100% {
         top: -100%;
@@ -2390,17 +2454,33 @@ textarea,
         top: -100%;
         transform: translateX(0);
     }
+    12.5% {
+        top: -50%;
+        transform: translateX(-40px);
+    }
     25% {
         top: 0%;
-        transform: translateX(-50px);
+        transform: translateX(0);
+    }
+    37.5% {
+        top: 25%;
+        transform: translateX(40px);
     }
     50% {
         top: 50%;
         transform: translateX(0);
     }
+    62.5% {
+        top: 62.5%;
+        transform: translateX(-40px);
+    }
     75% {
         top: 75%;
-        transform: translateX(50px);
+        transform: translateX(0);
+    }
+    87.5% {
+        top: 87.5%;
+        transform: translateX(40px);
     }
     100% {
         top: 100%;
@@ -2429,161 +2509,113 @@ textarea,
 .bunny-1 {
     width: 50px;
     top: 5%;
-    animation: bunny-drift-1 25s linear infinite;
+    animation: bunny-drift-1 25s linear infinite, bunny-wave 4s ease-in-out infinite;
 }
 
 .bunny-2 {
     width: 35px;
     top: 15%;
-    animation: bunny-drift-2 30s linear infinite;
-    animation-delay: -5s;
+    animation: bunny-drift-2 30s linear infinite, bunny-wave 5s ease-in-out infinite;
+    animation-delay: -5s, 0s;
 }
 
 .bunny-3 {
     width: 45px;
     top: 25%;
-    animation: bunny-drift-1 22s linear infinite;
-    animation-delay: -10s;
+    animation: bunny-drift-1 22s linear infinite, bunny-wave 3.5s ease-in-out infinite;
+    animation-delay: -10s, -1s;
 }
 
 .bunny-4 {
     width: 40px;
     top: 35%;
-    animation: bunny-drift-2 28s linear infinite;
-    animation-delay: -3s;
+    animation: bunny-drift-2 28s linear infinite, bunny-wave 4.5s ease-in-out infinite;
+    animation-delay: -3s, -2s;
 }
 
 .bunny-5 {
     width: 55px;
     top: 45%;
-    animation: bunny-drift-1 20s linear infinite;
-    animation-delay: -15s;
+    animation: bunny-drift-1 20s linear infinite, bunny-wave 5.5s ease-in-out infinite;
+    animation-delay: -15s, -1.5s;
 }
 
 .bunny-6 {
     width: 30px;
     top: 55%;
-    animation: bunny-drift-2 32s linear infinite;
-    animation-delay: -8s;
+    animation: bunny-drift-2 32s linear infinite, bunny-wave 4s ease-in-out infinite;
+    animation-delay: -8s, -0.5s;
 }
 
 .bunny-7 {
     width: 48px;
     top: 65%;
-    animation: bunny-drift-1 24s linear infinite;
-    animation-delay: -12s;
+    animation: bunny-drift-1 24s linear infinite, bunny-wave 5s ease-in-out infinite;
+    animation-delay: -12s, -2.5s;
 }
 
 .bunny-8 {
     width: 38px;
     top: 75%;
-    animation: bunny-drift-2 26s linear infinite;
-    animation-delay: -18s;
+    animation: bunny-drift-2 26s linear infinite, bunny-wave 3.5s ease-in-out infinite;
+    animation-delay: -18s, -1s;
 }
 
 .bunny-9 {
     width: 42px;
     top: 85%;
-    animation: bunny-drift-1 21s linear infinite;
-    animation-delay: -7s;
+    animation: bunny-drift-1 21s linear infinite, bunny-wave 4.5s ease-in-out infinite;
+    animation-delay: -7s, -3s;
 }
 
 .bunny-10 {
     width: 52px;
     top: 10%;
-    animation: bunny-drift-2 27s linear infinite;
-    animation-delay: -20s;
+    animation: bunny-drift-2 27s linear infinite, bunny-wave 5.5s ease-in-out infinite;
+    animation-delay: -20s, -0.5s;
 }
 
 .bunny-11 {
     width: 33px;
     top: 50%;
-    animation: bunny-drift-1 29s linear infinite;
-    animation-delay: -14s;
+    animation: bunny-drift-1 29s linear infinite, bunny-wave 4s ease-in-out infinite;
+    animation-delay: -14s, -2s;
 }
 
 .bunny-12 {
     width: 47px;
     top: 80%;
-    animation: bunny-drift-2 23s linear infinite;
-    animation-delay: -2s;
+    animation: bunny-drift-2 23s linear infinite, bunny-wave 5s ease-in-out infinite;
+    animation-delay: -2s, -1.5s;
 }
 
 @keyframes bunny-drift-1 {
     0% {
         left: -60px;
-        transform: rotate(0deg) translateY(0);
-    }
-    12.5% {
-        left: calc(12.5vw - 30px);
-        transform: rotate(5deg) translateY(-50px);
-    }
-    25% {
-        left: calc(25vw);
-        transform: rotate(10deg) translateY(0);
-    }
-    37.5% {
-        left: calc(37.5vw + 30px);
-        transform: rotate(5deg) translateY(50px);
-    }
-    50% {
-        left: calc(50vw);
-        transform: rotate(0deg) translateY(0);
-    }
-    62.5% {
-        left: calc(62.5vw - 30px);
-        transform: rotate(-5deg) translateY(-50px);
-    }
-    75% {
-        left: calc(75vw);
-        transform: rotate(-10deg) translateY(0);
-    }
-    87.5% {
-        left: calc(87.5vw + 30px);
-        transform: rotate(-5deg) translateY(50px);
     }
     100% {
         left: 100vw;
-        transform: rotate(0deg) translateY(0);
     }
 }
 
 @keyframes bunny-drift-2 {
     0% {
         left: 100vw;
-        transform: rotate(0deg) translateY(0);
-    }
-    12.5% {
-        left: calc(87.5vw - 30px);
-        transform: rotate(-5deg) translateY(50px);
-    }
-    25% {
-        left: calc(75vw);
-        transform: rotate(-10deg) translateY(0);
-    }
-    37.5% {
-        left: calc(62.5vw + 30px);
-        transform: rotate(-5deg) translateY(-50px);
-    }
-    50% {
-        left: calc(50vw);
-        transform: rotate(0deg) translateY(0);
-    }
-    62.5% {
-        left: calc(37.5vw - 30px);
-        transform: rotate(5deg) translateY(50px);
-    }
-    75% {
-        left: calc(25vw);
-        transform: rotate(10deg) translateY(0);
-    }
-    87.5% {
-        left: calc(12.5vw + 30px);
-        transform: rotate(5deg) translateY(-50px);
     }
     100% {
         left: -60px;
-        transform: rotate(0deg) translateY(0);
+    }
+}
+
+@keyframes bunny-wave {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-60px) rotate(10deg);
+    }
+    75% {
+        transform: translateY(60px) rotate(-10deg);
     }
 }
 
