@@ -114,16 +114,27 @@ function initNavigation() {
         });
     });
 
-    // Always start on home page
+    // Check for hash in URL (e.g., coming from category pages with #shop)
+    const hash = window.location.hash.slice(1); // Remove the # symbol
+    const targetSection = hash ? document.getElementById(hash) : null;
+    const targetLink = hash ? document.querySelector(`[data-section="${hash}"]`) : null;
+
     navLinks.forEach(l => l.classList.remove('active'));
     sections.forEach(s => s.classList.remove('active'));
 
-    const homeLink = document.querySelector('[data-section="home"]');
-    const homeSection = document.getElementById('home');
-    if (homeLink) homeLink.classList.add('active');
-    if (homeSection) homeSection.classList.add('active');
+    if (targetSection && targetLink) {
+        // Navigate to the hash section
+        targetLink.classList.add('active');
+        targetSection.classList.add('active');
+    } else {
+        // Default to home page
+        const homeLink = document.querySelector('[data-section="home"]');
+        const homeSection = document.getElementById('home');
+        if (homeLink) homeLink.classList.add('active');
+        if (homeSection) homeSection.classList.add('active');
+    }
 
-    // Clear any hash in URL
+    // Clear the hash from URL after navigation
     if (window.location.hash) {
         history.replaceState(null, null, window.location.pathname);
     }
