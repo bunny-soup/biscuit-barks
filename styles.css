@@ -1517,8 +1517,11 @@ textarea,
     min-height: 100vh;
 }
 
-.category-content {
-    padding: 30px;
+.category-page .section-window {
+    margin: 0;
+}
+
+.category-page .section-content {
     text-align: center;
 }
 
