@@ -1533,6 +1533,14 @@ textarea,
     margin: 0 5px;
 }
 
+.category-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
 .back-to-shop-btn {
     display: inline-block;
     padding: 12px 25px;
@@ -1542,7 +1550,6 @@ textarea,
     font-family: 'Press Start 2P', cursive;
     font-size: 10px;
     text-decoration: none;
-    margin-bottom: 25px;
     transition: all 0.3s;
     box-shadow:
         0 0 10px var(--neon-pink),
