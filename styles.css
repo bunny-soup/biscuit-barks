@@ -1346,7 +1346,8 @@ textarea,
     background: var(--black);
     padding: 5px 10px;
     display: inline-block;
-    margin-bottom: 15px;
+    margin-top: auto;
+    margin-bottom: 10px;
 }
 
 .buy-btn {
@@ -1359,7 +1360,6 @@ textarea,
     font-size: 10px;
     cursor: pointer;
     transition: all 0.2s;
-    margin-top: auto;
 }
 
 .buy-btn:hover {
